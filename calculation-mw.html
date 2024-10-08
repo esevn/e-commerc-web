@@ -7,6 +7,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>VY Gaming Store</title>
+    <style>
+      .scroll::-webkit-scrollbar{
+        display: none;
+      }
+    </style>
 </head>
 <body class="bg-gray-900">
   <!-- navbar -->
@@ -85,7 +90,7 @@
 
       <!-- Sidebar search -->
       <aside id="search" class="w-full flex fixed m-auto  items-center justify-center z-40 scale-0 transition-all duration-300 ease-in-out">
-        <div class="container rounded-md w-96 h-96 md:w-[600px] md:h-[400px] flex flex-col mt-3 bg-gray-800 overflow-y-scroll">
+        <div class="container scroll rounded-md w-96 h-96 md:w-[600px] md:h-[400px] flex flex-col mt-3 bg-gray-800 overflow-y-scroll">
           <form action="" class="container mx-auto fixed w-96 md:w-[600px] ">
             <input type="text" class="w-full lg:p-3 pl-10 lg:pl-14 rounded-t-md ring-0 bg-gray-800 text-white border-none focus:outline-none " placeholder="Search" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-5 h-5 absolute top-3 left-4 fill-slate-500">

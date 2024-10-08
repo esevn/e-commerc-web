@@ -6,13 +6,12 @@
   <link rel="stylesheet" href="./src/output.css">
   <link rel="shortcut icon" href="./src/img/logo-vy.png" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>  
   <title>VY Gaming Store</title>
   <style>
-    input:focus {
-      outline: none;
+    .scroll::-webkit-scrollbar{
+      display: none;
     }
   </style>
 </head>
@@ -93,9 +92,9 @@
 
       <!-- Sidebar search -->
   <aside id="search" class="w-full flex fixed m-auto  items-center justify-center z-40 scale-0 transition-all duration-300 ease-in-out">
-    <div class="container rounded-md w-96 h-96 md:w-[600px] md:h-[400px] flex flex-col mt-3 bg-gray-800 overflow-y-scroll">
+    <div class="container scroll rounded-md w-96 h-96 md:w-[800px] md:h-[400px] flex flex-col mt-3 bg-gray-800 overflow-y-scroll">
       <form action="" class="container mx-auto fixed w-96 md:w-[600px] ">
-        <input type="text" class="w-full lg:p-3 pl-10 lg:pl-14 rounded-t-md ring-0 bg-gray-800 text-white border-none focus:outline-none " placeholder="Search" >
+        <input type="text" id="search-item" class="w-full lg:p-3 pl-10 lg:pl-14 rounded-t-md ring-0 bg-gray-800 text-white border-none focus:outline-none focus:ring-0 " placeholder="Search" autofocus onkeyup="cari()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-5 h-5 absolute top-3 left-4 fill-slate-500">
           <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
         </svg>
@@ -106,7 +105,7 @@
         </div>
       </form>
       <!-- produk list -->
-      <div class="profuk-list flex flex-col mt-12">
+      <div class="product-list flex flex-col mt-12" id="product-list">
         <p class="text-white font-medium text-xs px-4">Popular</p>
       <div class="produk flex p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer">
         <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-cod.jpg" alt=""></div>
@@ -147,28 +146,28 @@
     </aside>
 
     <!-- section pertama -->
-    <section class="">
-<div id="default-carousel" class="relative w-full px-5 py-5 md:px-10 lg:px-32" data-carousel="slide">
+    <section class="mt-10">
+<div id="default-carousel" class="relative container w-full h-full m-auto px-4 md:px-28" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-40 md:h-[400px] overflow-hidden rounded-3xl z-0">
         <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="./src/img/vyg-caurosel.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="./src/img/vyg-carousel2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="./src/img/vyg-carousel3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="./src/img/vyg-carousel4.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="./src/img/vyg-carousel5.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
@@ -180,8 +179,8 @@
 
     <!-- section 3 -->
     <section>
-      <div class="container w-full h-full flex flex-col m-auto px-4">
-        <div class="flex flex-col gap-1 mb-5 lg:px-28 ">
+      <div class="container w-full h-full flex flex-col m-auto py-4 px-4 md:px-28">
+        <div class="flex flex-col gap-1 mb-5 ">
         <h1 class="text-base md:text-xl text-white font-semibold uppercase text-left items-start">🔥Populer Sekarang!</h1>
         <p class="text-xs text-white text-left px-5">Berikut adalah beberapa produk yang paling populer saat ini.</p>
       </div>
@@ -258,7 +257,7 @@
 
     <!-- section keempat -->
     <section>
-      <div class="container flex flex-col item-center justify-center m-auto px-4 lg:px-28">
+      <div class="container w-full h-full flex flex-col item-center justify-center  m-auto px-4 md:px-28">
         <button class="bg-blue-600 w-24 h-10 rounded-md ml-4 text-white font-semibold text-base mb-8">Top Up</button>
         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 px-4 gap-3">
           <!-- item 1 -->
@@ -431,6 +430,5 @@
      </footer>
 
     <script src="/script.js"></script>
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
 </body>
 </html>
