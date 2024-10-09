@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./src/output.css">
+        <link rel="shortcut icon" href="./src/img/logo-vy.png" type="image/x-icon">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+        <title>VY Gaming Store</title>
+        <style>
+          .scroll::-webkit-scrollbar{
+            display: none;
+          }
+        </style>
+      </head>
+<body class="bg-gray-900">
+      <!-- navbar -->
+      <nav class="sticky top-0 z-20 w-full border-b border-slate-600 bg-black/70">
+        <div class="container relative flex h-[60px] items-center justify-between px-4 md:px-10 lg:px-32 ">
+        <div class="flex flex-row items-center">
+        <div onclick="openNavbar()" class="md:hidden border border-gray-800 rounded-lg px-1 py-1 md:py-2 border-border/50 flex items-center cursor-pointer">  
+        <svg xmlns="http://www.w3.org/2000/svg" class=" w-6 h-6 fill-white" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+        </div><div class="flex items-center"><img src="./src/img/logo-vy.png" class="w-11 h-11 md:w-12 md:h-12"     
+      alt="VYGAMINGSTORE Logo">
+      </div>
+      <!-- navbar dextop -->
+      <a href="index.html"><div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"></path></svg><span class="group-hover:text-blue-600">Beranda</span></div></a>
+      <div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg><span class="group-hover:text-blue-600">Cek Transaksi</span></div>
+      <div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M112.41,102.53a8,8,0,0,1,5.06-10.12l12-4A8,8,0,0,1,140,96v40a8,8,0,0,1-16,0V107.1l-1.47.49A8,8,0,0,1,112.41,102.53ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16h8V104A16,16,0,0,1,40,88H80V56A16,16,0,0,1,96,40h64a16,16,0,0,1,16,16v72h40a16,16,0,0,1,16,16v56h8A8,8,0,0,1,248,208Zm-72-64v56h40V144ZM96,200h64V56H96Zm-56,0H80V104H40Z"></path></svg>
+      <span class="group-hover:text-blue-600 ">Leaderboard</span></div>
+      <div id="btn-calculator" onclick="closeSearch()" class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg>
+      <span class="group-hover:text-blue-600">Calculator</span></div>
+      </div>
+
+      <div class="flex gap-2">
+      <div id="btn-search" onclick="closeCalculator()" class="border border-gray-800 cursor-pointer rounded-lg md:w-32 px-1 py-1 md:py-2 border-border/50 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-6
+      h-6 fill-white" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg><span class="hidden md:flex text-base text-white">Search</span>
+      </div>
+      <div class="border border-gray-800 rounded-lg p-1 border-border/50 w-14 flex items-center justify-center  text-white">ID<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-white" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+      </div>
+      </div>
+  </div>
+</nav> 
+      <!-- sidebar nav -->
+      <aside class="w-full h-screen md:hidden bg-black/40 z-50 transition-all duration-150 ease-in-out -translate-x-full fixed">
+        <div class="container w-72 h-full bg-gray-800 border-b-2 border-separate">
+          <div class="flex flex-col relative">
+            <div onclick="closeNavbar()" class="absolute right-3 top-4 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256" class="fill-white">
+              <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+            </svg>
+            </div>
+            <div class="absolute left-3 top-2">
+              <div class="w-12 h-12">
+              <img src="./src/img/logo-vy.png" alt="">
+              </div>
+            </div>
+        </div>
+            <ul class="mt-20 flex flex-col gap-5 text-left ml-5 text-white font-semibold">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="">Cek Transaksi</a></li>
+              <li><a href="">Leaderboard</a></li>
+              <li><a href="calculation-mw.html">Kalkulator</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Sidebar calculator -->
+       <aside id="search-calculator" class="hidden w-full h-full md:flex fixed m-auto justify-center z-30 scale-0 transition-all duration-200 ease-in-out">
+        <div class="container w-96 h-72 flex flex-col gap-3 items-center justify-center bg-gray-800 p-2 mt-2 rounded-lg">
+          <!-- calculator mw -->
+           <a href="calculation-mw.html"><div class="w-full h-32 flex px-4 justify-center gap-2 transition-all duration-100 hover:bg-gray-700 rounded-lg">
+            <div class="mt-3"><svg xmlns="http://www.w3.org/2000/svg" class=" w-10 h-10 fill-white" viewBox="0 0 256 256"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg></div>
+            <div class="content block text-white mt-2">
+              <h3 class="text-lg font-bold">Magic Wheel</h3>
+              <p class="text-sm leanding-normal">Digunakan untuk mengetahui total maksimal diamond yang dibutuhkan untuk mendapatkan skin Legends.</p>
+            </div>
+           </div></a>
+           <!-- calculator zodiac -->
+           <a href="calculation-zodiac.html"><div class="w-full h-32 flex px-4 justify-center gap-2 transition-all duration-100 hover:bg-gray-700 rounded-lg">
+            <div class="mt-3"><svg xmlns="http://www.w3.org/2000/svg" class=" w-10 h-10 fill-white" viewBox="0 0 256 256"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg></div>
+            <div class="content block text-white mt-2">
+              <h3 class="text-lg font-bold">Zodiac</h3>
+              <p class="text-sm leanding-normal">Digunakan untuk mengetahui total maksimal diamond yang dibutuhkan untuk mendapatkan skin Zodiac.</p>
+            </div>
+           </div></a>
+        </div>
+       </aside>
+
+      <!-- Sidebar search -->
+  <aside id="search" class="w-full flex fixed m-auto  items-center justify-center z-40 scale-0 transition-all duration-300 ease-in-out">
+    <div class="container scroll rounded-md w-96 h-96 md:w-[800px] md:h-[400px] flex flex-col mt-3 bg-gray-800 overflow-y-scroll">
+      <form action="" class="container mx-auto fixed w-96 md:w-[600px] ">
+        <input type="text" id="search-item" class="w-full lg:p-3 pl-10 lg:pl-14 rounded-t-md ring-0 bg-gray-800 text-white border-none focus:outline-none focus:ring-0 " placeholder="Search" autofocus onkeyup="cari()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-5 h-5 absolute top-3 left-4 fill-slate-500">
+          <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+        </svg>
+        <div onclick="closeSearch()" class="cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 256 256" class="w-5 h-5 absolute top-3 right-4 fill-slate-500">
+            <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+          </svg>
+        </div>
+      </form>
+      <!-- produk list -->
+      <div class="product-list flex flex-col mt-12" id="product-list">
+        <p class="text-white font-medium text-xs px-4">Popular</p>
+      <div class="produk flex p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-cod.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Call of Duty</h2></div>
+      </div>
+      <!-- item 2-->
+      <div class="produk flex  p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer ">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-hok.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Honor of Kings</h2></div>
+      </div>
+      <!-- item 3 -->
+      <div class="produk flex  p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer ">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-ffmax.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Free Fire MAX</h2></div>
+      </div>
+      <!-- item 4 -->
+      <div class="produk flex  p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer ">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-ff.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Free Fire</h2></div>
+      </div>
+      <!-- item 5 -->
+      <div class="produk flex  p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer ">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-ml.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Mobile Legends</h2></div>
+      </div>
+      <!-- item 6 -->
+      <div class="produk flex  p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer ">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-gnhin.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Genshin Impact</h2></div>
+      </div>
+      <!-- item 7  -->
+      <div class="produk flex  p-2 bg-gray-800 rounded-md mx-2 transition-all duration-100 hover:bg-gray-700 cursor-pointer mb-3">
+        <div class="image w-20 h-20 object-cover rounded-md overflow-hidden"><img src="./src/img/thumbnail/thum-valorant.jpg" alt=""></div>
+        <div class="content flex items-center px-3 text-white font-medium "><h2>Valorant</h2></div>
+      </div>
+      </div>
+      </div>
+    </aside>
+
+    <section>
+            <div class="w-full bg-gray-800 p-4 border border-slate-700 mt-28">
+                <div class="flex items-center ">
+                <div class="hero w-28 h-28 relative">
+                 <img alt="Mobile Legends game cover" class="w-full h-full bg-cover rounded-lg z-20  aspect-square object-cover shadow-2xl" src="./src/img/thumbnail/thum-ml.jpg"/>
+                </div>
+                 <div class="ml-4 ">
+                  <h1 class="text-xl font-bold text-white">
+                   MOBILE LEGENDS
+                  </h1>
+                  <p class="text-gray-400">
+                   Moonton
+                  </p>
+                  <div class="flex flex-col md:flex-row gap-3">
+                  <div class="flex items-center mt-2">
+                   <i class="fas fa-bolt text-yellow-500 mr-2">
+                   </i>
+                   <span class="text-sm text-white">
+                    Proses Cepat
+                   </span>
+                  </div>
+                  <div class="flex items-center mt-1">
+                   <i class="fas fa-comments text-green-500 mr-2">
+                   </i>
+                   <span class="text-sm text-white">
+                    Layanan Chat 24/7
+                   </span>
+                  </div>
+                  <div class="flex items-center mt-1">
+                   <i class="fas fa-gem text-blue-500 mr-2">
+                   </i>
+                   <span class="text-sm text-white">
+                    Diamonds
+                   </span>
+                  </div>
+                </div>
+                 </div>
+                </div>
+        </div>
+
+        <div class="relative container w-full h-full m-auto px-4 md:px-28">
+            <div class="w-full h-12 bg-gray-800 flex items-center justify-between px-2 mt-5 rounded-lg">
+                <h2 class="text-sm font-medium text-white">
+                    Deskripsi dan cara melakukan transaksi</h2>
+                    <button id="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-5 cursor-pointer rotate-0" viewBox="0 0 512 512"><path fill="#ffffff" d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
+                </button>
+            </div>
+            <!-- deskripsi top up -->
+             <div id="deskripsi" class="hidden bg-gray-800 mt-3 rounded-lg px-2 py-3">
+                <h3 class="text-sm text-white font-medium">Beli top up ML diamond Mobile Legends dan Weekly Pass harga paling murah, aman, cepat, dan terpercaya hanya di VYGaming. Cara topup MLBB via ID termurah cukup dengan memasukkan ID (Server) dan lakukan pembayaran, secara otomatis diamond masuk ke akun Anda.</h3>
+                <div class="flex flex-col gap-2 mt-3">
+                <span class="text-xs text-white"><i class="fa-solid fa-minus" style="color: #48bafc;"></i> Waktu proses 1 detik (setelah pembayaran diterima)</span>
+                <span class="text-xs text-white"><i class="fa-solid fa-minus" style="color: #48bafc;"></i> Layanan top up open 24 Jam Non Stop</span>
+                <span class="text-xs text-white"><i class="fa-solid fa-minus" style="color: #48bafc;"></i> Bantuan chat WhatsApp open 24 jam</span>
+            </div>
+             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="relative container w-full h-full m-auto px-4 md:px-28">
+        <div class="bg-gray-800 p-4 mt-4 rounded-lg text-white">
+            <div class="flex items-center mb-2">
+                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2">
+                 1
+                </div>
+                <h2 class="text-lg font-medium">
+                    Pilih Nominal
+                </h2>
+               </div>
+            <div class="mt-4">
+             <h3 class="text-md font-bold">
+              ✨Weekly Diamond Pass
+             </h3>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+              <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+               <div>
+                <p class="text-sm">
+                 1x Weekly Diamond Pass
+                </p>
+                <p class="text-xs text-gray-400 line-through">
+                 Rp 28.000
+                </p>
+                <p class="text-sm font-bold">
+                 Rp 27.000
+                </p>
+               </div>
+               <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/logo-wdp.png"/>
+              </div>
+              <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+               <div>
+                <p class="text-sm">
+                 2x Weekly Diamond Pass
+                </p>
+                <p class="text-sm font-bold">
+                 Rp 54.000
+                </p>
+               </div>
+               <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/logo-wdp.png"/>
+              </div>
+              <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+               <div>
+                <p class="text-sm">
+                 3x Weekly Diamond Pass
+                </p>
+                <p class="text-sm font-bold">
+                 Rp 81.000
+                </p>
+               </div>
+               <img alt="Diamond icon" class="w-10 h-10" src="./src/img/asset-ml/logo-wdp.png"/>
+              </div>
+             </div>
+             <div class="mt-4">
+             <h3 class="text-md font-bold mb-2">
+                ⚡Special Items
+            </h3>
+             <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                    Twilight Pass
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 147.393
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-100 rounded" src="./src/img/asset-ml/logo-twillight.png"/>
+               </div>
+            </div>
+            </div>
+            <!-- top up per dm -->
+            <h3 class="text-md font-bold mt-5 mb-2">
+                💎Top Up Instant
+            </h3>
+         <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
+            <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  50 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 13.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  100 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 27.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  150 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 40.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  220 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 59.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  300 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 82.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  500 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 130.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  1200 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 280.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  5050 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 1.238.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  6030 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 1.473.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+               <div class="bg-gray-700 p-4 rounded-lg flex items-center justify-between">
+                <div>
+                 <p class="text-sm">
+                  10050 Diamonds
+                 </p>
+                 <p class="text-sm font-bold">
+                  Rp 2.460.000
+                 </p>
+                </div>
+                <img alt="Diamond icon" class="w-10 h-10"  src="./src/img/asset-ml/diamond-ml.png"/>
+               </div>
+            </div>
+        </div>
+            <!-- Section 2: Masukkan Data Akun -->
+    <div class="bg-gray-800 p-4 rounded-lg mb-4 mt-4 text-white">
+        <div class="flex items-center mb-2">
+         <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2">
+          2
+         </div>
+         <h2 class="text-lg">
+          Masukkan Data Akun
+         </h2>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+         <div>
+          <label class="block text-sm mb-1" for="id">
+           ID
+          </label>
+          <input class="w-full p-2 bg-gray-700 rounded-lg text-white" id="id" placeholder="Ketikan ID" type="text"/>
+         </div>
+         <div>
+          <label class="block text-sm mb-1" for="server">
+           Server
+          </label>
+          <input class="w-full p-2 bg-gray-700 rounded-lg text-white" id="server" placeholder="Ketikan Server" type="text"/>
+         </div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">
+         Masukan id dan server tanpa tanda kurung
+        </p>
+       </div>
+           <!-- Section 3: Masukkan Jumlah Pembelian -->
+    <div class="bg-gray-800 p-4 rounded-lg mb-4 text-white">
+        <div class="flex items-center mb-2">
+         <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2">
+          3
+         </div>
+         <h2 class="text-lg">
+          Masukkan Jumlah Pembelian
+         </h2>
+        </div>
+        <div class="flex items-center">
+         
+         <div class="flex gap-2">
+          <button class="bg-blue-600 text-white rounded-lg w-8 h-8 flex items-center justify-center">
+           +
+          </button>
+          <input class="w-10 bg-gray-700 rounded-lg text-white text-center" type="name" value="1"/>
+          <button class="bg-blue-600 text-white rounded-lg w-8 h-8 flex items-center justify-center">
+           -
+          </button>
+         </div>
+        </div>
+       </div>
+       <!-- Section 4: Pilih Pembayaran -->
+       <div class="bg-gray-800 p-4 rounded-lg mb-4 text-white">
+        <div class="flex items-center mb-2">
+         <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2">
+          4
+         </div>
+         <h2 class="text-lg">
+          Pilih Pembayaran
+         </h2>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg mb-4 relative">
+         <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs px-2 py-1 rounded-bl-lg">
+          Best Price
+         </div>
+         <div class="text-center mb-2">
+          <img alt="QRIS logo" class="mx-auto" height="50" src="https://storage.googleapis.com/a1aa/image/OGrhCEPT3fxrVKWBzoHB3LidJAJCt2oT4hhf2N1T9Bxsr2kTA.jpg" width="100"/>
+         </div>
+         <p class="text-center text-gray-400">
+          Min. Rp 100
+         </p>
+        </div>
+        <div class="mb-4">
+         <h3 class="text-sm mb-2">
+          E-Wallet
+         </h3>
+         <div class="bg-gray-700 p-2 rounded-lg flex justify-between items-center">
+          <div class="flex space-x-2">
+           <img alt="OVO logo" height="30" src="https://storage.googleapis.com/a1aa/image/ctReGmTqE60lby7EKkxnZ6tfKNwXf16QwfgcjVrG9OA3uaTOB.jpg" width="30"/>
+           <img alt="Gopay logo" height="30" src="https://storage.googleapis.com/a1aa/image/BJCDRNiWG4I4MhtEpWRGnKvMe5fGdcczBw2l6LDqfAiuXtJnA.jpg" width="30"/>
+           <img alt="Dana logo" height="30" src="https://storage.googleapis.com/a1aa/image/iUTBzSV1uJpCNZO72BCjSj4Q8udN8rbiZTIIwD85rW48qN5E.jpg" width="30"/>
+           <img alt="LinkAja logo" height="30" src="https://storage.googleapis.com/a1aa/image/QelW6y16GzUsfUXj53tfWef0OFt4hCICb4duk4Lkdg9HfqN5E.jpg" width="30"/>
+           <img alt="ShopeePay logo" height="30" src="https://storage.googleapis.com/a1aa/image/DqyhxFUEAhrYHBizkL5BfhzpMqRj71CrAA8xExCMcej6r2kTA.jpg" width="30"/>
+          </div>
+          <i class="fas fa-chevron-down">
+          </i>
+         </div>
+        </div>
+        <div class="mb-4">
+         <h3 class="text-sm mb-2">
+          Virtual Account
+         </h3>
+         <div class="bg-gray-700 p-2 rounded-lg flex justify-between items-center">
+          <div class="flex space-x-2">
+           <img alt="BCA logo" height="30" src="https://storage.googleapis.com/a1aa/image/uKmZ5K9myc68GFP3qIacS0SwCAEukrku7VstT91gfEt6VbyJA.jpg" width="30"/>
+           <img alt="BNI logo" height="30" src="https://storage.googleapis.com/a1aa/image/xENB025w6FaRDRfA7DvbdwTemGGYFQA2VXkE5i4I9WGwr2kTA.jpg" width="30"/>
+           <img alt="BRI logo" height="30" src="https://storage.googleapis.com/a1aa/image/MKkUeBhnAqVKF6ubJlhcfQswzhnYyQqOeAS8Tejnus0yvaTOB.jpg" width="30"/>
+           <img alt="Mandiri logo" height="30" src="https://storage.googleapis.com/a1aa/image/d1eK5doi3Jz8R6RK66pmy9n8e9vboK0fuKjkmInv9zk3XtJnA.jpg" width="30"/>
+           <img alt="Maybank logo" height="30" src="https://storage.googleapis.com/a1aa/image/k1PqfPfNazjsyUbT2BQMwsrOh3y0XgETePF5OzU6e7JFvaTOB.jpg" width="30"/>
+          </div>
+          <i class="fas fa-chevron-down">
+          </i>
+         </div>
+        </div>
+        <div>
+         <h3 class="text-sm mb-2">
+          Convenience Store
+         </h3>
+         <div class="bg-gray-700 p-2 rounded-lg flex justify-between items-center">
+          <div class="flex space-x-2">
+           <img alt="Alfamart logo" height="30" src="https://storage.googleapis.com/a1aa/image/FffskHz01bsIGU2DkWmrqcsbBd3ybBahZ5XRJRv9uZfdXtJnA.jpg" width="30"/>
+           <img alt="Indomaret logo" height="30" src="https://storage.googleapis.com/a1aa/image/AEVR8Q5f0twBPyE8HUN8cDqiCZBqMzrUji7Ry6UdTeJ0r2kTA.jpg" width="30"/>
+          </div>
+          <i class="fas fa-chevron-down">
+          </i>
+         </div>
+        </div>
+       </div>
+
+        
+        </div>
+    </section>
+        <!-- section kelima -->
+        <div><svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="bg-transparent pt-8 transition delay-150 duration-300 ease-in-out md:pt-24 print:hidden"><path d="M 0,400 C 0,400 0,200 0,200 C 40.34909359970402,243.0042668639783 80.69818719940804,286.0085337279566 135,268 C 189.30181280059196,249.9914662720434 257.5563448020718,170.97013195215192 311,159 C 364.4436551979282,147.02986804784808 403.07643359230485,202.11093846343573 452,207 C 500.92356640769515,211.88906153656427 560.137920828709,166.58611419410528 626,169 C 691.862079171291,171.41388580589472 764.3718830928599,221.54460476014305 826,248 C 887.6281169071401,274.45539523985695 938.3745467998519,277.2354667653225 985,246 C 1031.625453200148,214.7645332346775 1074.1299297077323,149.51352817856701 1122,137 C 1169.8700702922677,124.48647182143299 1223.1057343692194,164.71042052040943 1277,184 C 1330.8942656307806,203.28957947959057 1385.4471328153904,201.64478973979527 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1" class="fill-secondary transition-all delay-150 duration-300 ease-in-out"></path></svg></div>
+        <footer class="w-full h-full flex flex-col m-auto bg-black px-4">
+         <div class="container flex flex-col m-auto px-4 lg:px-28 ">
+           <div class="logo w-[100px] md:w-[150px] h-[100px] md:h-[150px] mb-4 items-start">
+           <img alt="Logo" class="w-full h-full bg-cover" src="./src/img/logo-vy.png"/>
+           </div>
+           <div class="text-white font-medium text-base">
+           <p class="text-left mb-6">
+            Top up game &amp; voucher terlaris, murah, aman legal 100% buka 24 Jam dengan payment terlengkap se-Indonesia hanya di vy gaming store
+           </p>
+         </div>
+           <div class="flex space-x-4 mb-10">
+            <a href="#">
+             <i class="fab fa-instagram text-pink-500 text-2xl">
+             </i>
+            </a>
+            <a href="#">
+             <i class="fab fa-youtube text-red-500 text-2xl">
+             </i>
+            </a>
+            <a href="#">
+             <i class="fab fa-whatsapp text-green-500 text-2xl">
+             </i>
+            </a>
+            <a href="#">
+             <i class="fab fa-facebook text-blue-500 text-2xl">
+             </i>
+            </a>
+           </div>
+           <div class="grid grid-cols-2 lg:grid-cols-3 gap-10 mb-24">
+            <div>
+             <h2 class="text-blue-500 mb-4">
+              Peta Situs
+             </h2>
+             <ul class="space-y-2 text-white text-left">
+              <li>
+               Beranda
+              </li>
+              <li>
+               Masuk
+              </li>
+              <li>
+               Cek Transaksi
+              </li>
+              <li>
+               Hubungi Kami
+              </li>
+              <li>
+               Ulasan
+              </li>
+             </ul>
+            </div>
+            <div>
+             <h2 class="text-blue-500 mb-4">
+              Dukungan
+             </h2>
+             <ul class="space-y-2 text-white text-left">
+              <li>
+               WhatsApp
+              </li>
+             </ul>
+            </div>
+            <div>
+             <h2 class="text-blue-500 mb-4">
+              Legalitas
+             </h2>
+             <ul class="space-y-2 text-white text-left">
+              <li>
+               Kebijakan Privadi
+              </li>
+              <li>
+               Syarat &amp; Ketentuan
+              </li>
+             </ul>
+            </div>
+           </div>
+           <hr class="bg-gray-500">
+           <div class="copy-right py-10">
+             <!-- <p class="text-sm "></p> -->
+             <p class="text-xs leading-5 text-white font-medium">© <!-- -->2024<!-- --> <!-- -->VYGAMING STORE<!-- -->. All rights reserved.</p>
+           </div>
+          </div>
+        </footer>
+   
+       <script src="./js/script.js"></script>
+    <script>
+    // sidebar deskripsi 
+    const deskripsi = document.getElementById('deskripsi');
+    const btnIcon = document.getElementById('btn-icon');
+
+    btnIcon.addEventListener("click", function() {
+      deskripsi.classList.toggle("hidden"); // Menampilkan atau menyembunyikan kotak deskripsi
+      btnIcon.classList.toggle("rotate-180"); // Contoh rotasi jika diperlukan
+    });
+    </script>
+</body>
+</html>

@@ -16,7 +16,7 @@ function closeNavbar() {
 const search = document.getElementById("search");
 const btnSearch = document.getElementById("btn-search");
 
-btnSearch.addEventListener("mousedown", function () {
+btnSearch.addEventListener("click", function () {
   search.classList.toggle("scale-100");
 });
 
@@ -48,18 +48,21 @@ const cari = () => {
 
 }
 
-
 // sidebar calculation
 const calculator = document.getElementById('search-calculator');
 const btnCalculator = document.getElementById('btn-calculator');
 
-btnCalculator.addEventListener("mousedown", function() {
+btnCalculator.addEventListener("click", function() {
   calculator.classList.toggle("scale-100");
 });
 
 function closeCalculator() {
   calculator.classList.remove("scale-100");
 }
+
+
+
+
 
 
 
