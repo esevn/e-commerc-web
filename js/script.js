@@ -12,6 +12,17 @@ function closeNavbar() {
   sideNav.classList.remove("translate-x-0");
 }
 
+// Mengambil elemen dropdown
+const kalkulatorDropdown = document.getElementById('kalkulatorDropdown');
+const dropdownContent = document.getElementById('dropdownContent');
+const iconDropdown = document.getElementById('iconDropdown');
+
+// Toggle dropdown saat klik
+kalkulatorDropdown.addEventListener('click', function() {
+    dropdownContent.classList.toggle('hidden');
+    iconDropdown.classList.toggle('rotate-180'); // Rotate icon
+});
+
 // Sidebar search
 const search = document.getElementById("search");
 const btnSearch = document.getElementById("btn-search");
@@ -24,6 +35,7 @@ function closeSearch() {
   search.classList.add("scale-0");
   search.classList.remove("scale-100");
 };
+
 
 // search produk
 const cari = () => {

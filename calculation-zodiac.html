@@ -41,30 +41,40 @@
   </div>
 </div>
 </nav> 
-  <!-- sidebar nav -->
-  <aside class="w-full h-screen md:hidden bg-black/40 z-50 transition-all duration-150 ease-in-out -translate-x-full fixed">
-    <div class="container w-72 h-full bg-gray-800 border-b-2 border-separate">
-      <div class="flex flex-col relative">
-        <div onclick="closeNavbar()" class="absolute right-3 top-4 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256" class="fill-white">
-          <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-        </svg>
+      <!-- sidebar nav -->
+      <aside class="w-full h-screen md:hidden bg-black/40 z-50 transition-all duration-150 ease-in-out -translate-x-full fixed">
+        <div class="container w-72 h-full bg-gray-800 border-b-2 border-separate">
+          <div class="flex flex-col relative">
+            <div onclick="closeNavbar()" class="absolute right-3 top-4 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256" class="fill-white">
+              <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+            </svg>
+            </div>
+            <div class="absolute left-3 top-2">
+              <div class="w-12 h-12">
+              <img src="./src/img/logo-vy.png" alt="">
+              </div>
+            </div>
         </div>
-        <div class="absolute left-3 top-2">
-          <div class="w-12 h-12">
-          <img src="./src/img/logo-vy.png" alt="">
+            <ul class="mt-20 flex flex-col gap-5 text-left ml-5 text-white font-semibold">
+              <a href="index.html"><li>Beranda</li></a>
+              <a href="check-transaction.html"><li>Cek Transaksi</li></a>
+              <a href="leaderboard.html"><li>Leaderboard</li></a>
+              <li class="flex items-center justify-between cursor-pointer" id="kalkulatorDropdown">
+                <span>Kalkulator</span>
+                <i id="iconDropdown" class="fas fa-chevron-up transition-transform transform mr-5"></i>
+            </li>
+            <hr class="w-64">
+            <div id="dropdownContent" class="hidden pl-2">
+              <a href="calculation-mw.html"><div class="p-2 rounded transition duration-100 ease-in"><span class="hover:text-blue-600 cursor-pointer">Magic Wheel</span></div></a>
+              <a href="calculation-zodiac.html"><div class="p-2 rounded transition duration-100 ease-in"><span class="hover:text-blue-600 cursor-pointer">Zodiac</span></div></a>
+                
+                
+            </div>
+            </ul>
           </div>
         </div>
-    </div>
-        <ul class="mt-20 flex flex-col gap-5 text-left ml-5 text-white font-semibold">
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="">Cek Transaksi</a></li>
-          <li><a href="">Leaderboard</a></li>
-          <li><a href="calculation-mw.html">Kalkulator</a></li>
-        </ul>
-      </div>
-    </div>
-  </aside>
+      </aside>
 
         <!-- Sidebar calculator -->
         <aside id="search-calculator" class="hidden w-full h-full md:flex fixed m-auto justify-center z-30 scale-0 transition-all duration-200 ease-in-out">
@@ -146,7 +156,7 @@
     <section>
         <div class="container w-[350px] md:w-[800px] h-full text-center flex flex-col m-auto items-center justify-center px-5 text-white bg-gray-900">
         <div class="hero w-96 h-96 lg:w-[500px] md:h-[500px]"><img class="w-full h-full bg-cover" src="./src/img/logo-vy.png" alt="VYGAMING STORE"></div>
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-white text-center mb-3">Kalkulator Magic Whell</h1>
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-white text-center mb-3">Kalkulator Zodiac</h1>
         <h2 class="text-sm text-white text-center mb-3">Digunakan untuk mengetahui total maksimal diamond yang dibutuhkan untuk <br> mendapatkan skin Legends.</h2>
         <div class="w-[300px] md:w-[600px] text-xs md:text-balance">
             <h3 class="text-left items-start">Geser sesuai dengan Titik Zodiac Anda</h3>

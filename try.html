@@ -320,23 +320,33 @@
    </div>
 </section>
 
-<section class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
 
-  <div class="relative">
-      <!-- Kotak dengan ikon SVG -->
-      <button id="btn-icon" class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-lg shadow-lg transition-transform transform hover:scale-105">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-          </svg>
-      </button>
-  </div>
+<section>
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 h-screen bg-gray-800 text-white">
+        <ul class="space-y-2 p-4">
+            <li class="flex justify-between items-center cursor-pointer" id="kalkulatorDropdown">
+                <span>Kalkulator</span>
+                <span id="iconDropdown" class="transition-transform transform rotate-0">
+                    &#9660;
+                </span>
+            </li>
+            <div id="dropdownContent" class="hidden pl-4 space-y-2">
+                <div class="bg-gray-700 p-2 rounded">Kalkulator 1</div>
+                <div class="bg-gray-700 p-2 rounded">Kalkulator 2</div>
+            </div>
+        </ul>
+    </div>
 
-  <!-- Kotak deskripsi -->
-  <div id="deskripsi" class="hidden mt-4 bg-white p-4 border border-gray-300 rounded-lg shadow-lg">
-      <p class="text-black">Ini adalah deskripsi yang muncul setelah ikon diklik. Anda dapat menambahkan lebih banyak informasi di sini.</p>
-  </div>
-
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+        <h1 class="text-2xl font-bold">Main Content</h1>
+        <p>This is the main content area.</p>
+    </div>
+</div>
 </section>
+
 
 
     <section class="mt-10">
@@ -441,7 +451,7 @@
     </div>
       </section>
 
-
+      <script src="./js/script.js"></script>
 
       <script>
         // Function to update the displayed value based on the slider's current position

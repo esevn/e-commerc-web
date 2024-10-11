@@ -52,10 +52,20 @@
             </div>
         </div>
             <ul class="mt-20 flex flex-col gap-5 text-left ml-5 text-white font-semibold">
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="">Cek Transaksi</a></li>
-              <li><a href="">Leaderboard</a></li>
-              <li><a href="calculation-mw.html">Kalkulator</a></li>
+              <a href="index.html"><li>Beranda</li></a>
+              <a href="check-transaction.html"><li>Cek Transaksi</li></a>
+              <a href="leaderboard.html"><li>Leaderboard</li></a>
+              <li class="flex items-center justify-between cursor-pointer" id="kalkulatorDropdown">
+                <span>Kalkulator</span>
+                <i id="iconDropdown" class="fas fa-chevron-up transition-transform transform mr-5"></i>
+            </li>
+            <hr class="w-64">
+            <div id="dropdownContent" class="hidden pl-2">
+                <a href="calculation-mw.html"><div class="p-2 rounded transition duration-100 ease-in"><span class="hover:text-blue-600 cursor-pointer">Magic Wheel</span></div></a>
+            <a href="calculation-zodiac.html"><div class="p-2 rounded transition duration-100 ease-in"><span class="hover:text-blue-600 cursor-pointer">Zodiac</span></div></a>
+                
+                
+            </div>
             </ul>
           </div>
         </div>

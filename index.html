@@ -28,8 +28,8 @@
       <!-- navbar dextop -->
       <a href="index.html"><div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"></path></svg><span class="group-hover:text-blue-600">Beranda</span></div></a>
       <div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg><span class="group-hover:text-blue-600">Cek Transaksi</span></div>
-      <div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M112.41,102.53a8,8,0,0,1,5.06-10.12l12-4A8,8,0,0,1,140,96v40a8,8,0,0,1-16,0V107.1l-1.47.49A8,8,0,0,1,112.41,102.53ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16h8V104A16,16,0,0,1,40,88H80V56A16,16,0,0,1,96,40h64a16,16,0,0,1,16,16v72h40a16,16,0,0,1,16,16v56h8A8,8,0,0,1,248,208Zm-72-64v56h40V144ZM96,200h64V56H96Zm-56,0H80V104H40Z"></path></svg>
-      <span class="group-hover:text-blue-600 ">Leaderboard</span></div>
+      <a href="leaderboard.html"><div class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M112.41,102.53a8,8,0,0,1,5.06-10.12l12-4A8,8,0,0,1,140,96v40a8,8,0,0,1-16,0V107.1l-1.47.49A8,8,0,0,1,112.41,102.53ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16h8V104A16,16,0,0,1,40,88H80V56A16,16,0,0,1,96,40h64a16,16,0,0,1,16,16v72h40a16,16,0,0,1,16,16v56h8A8,8,0,0,1,248,208Zm-72-64v56h40V144ZM96,200h64V56H96Zm-56,0H80V104H40Z"></path></svg>
+      <span class="group-hover:text-blue-600 ">Leaderboard</span></div></a>
       <div id="btn-calculator" onclick="closeSearch()" class="hidden group md:flex flex-row text-white font-thin items-center p-4 cursor-pointer transition-all ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class=" w-5 h-5 fill-white mr-2 group-hover:fill-blue-600" viewBox="0 0 256 256"><path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z"></path></svg>
       <span class="group-hover:text-blue-600">Calculator</span></div>
       </div>
@@ -59,10 +59,20 @@
             </div>
         </div>
             <ul class="mt-20 flex flex-col gap-5 text-left ml-5 text-white font-semibold">
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="">Cek Transaksi</a></li>
-              <li><a href="">Leaderboard</a></li>
-              <li><a href="calculation-mw.html">Kalkulator</a></li>
+              <a href="index.html"><li>Beranda</li></a>
+              <a href="check-transaction.html"><li>Cek Transaksi</li></a>
+              <a href="leaderboard.html"><li>Leaderboard</li></a>
+              <li class="flex items-center justify-between cursor-pointer" id="kalkulatorDropdown">
+                <span>Kalkulator</span>
+                <i id="iconDropdown" class="fas fa-chevron-up transition-transform transform mr-5"></i>
+            </li>
+            <hr class="w-64">
+            <div id="dropdownContent" class="hidden pl-2">
+                <a href="calculation-mw.html"><div class="p-2 rounded transition duration-100 ease-in"><span class="hover:text-blue-600 cursor-pointer">Magic Wheel</span></div></a>
+            <a href="calculation-zodiac.html"><div class="p-2 rounded transition duration-100 ease-in"><span class="hover:text-blue-600 cursor-pointer">Zodiac</span></div></a>
+                
+                
+            </div>
             </ul>
           </div>
         </div>
